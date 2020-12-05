@@ -8789,12 +8789,12 @@
 </div>
 <p>Generally, you should use the default device code flow. If you need to use a non-interactive authentication flow, you can authenticate using a certificate or credentials of an account that has sufficient privileges in your tenant and doesn't have multi-factor authentication or other advanced security features enabled.</p>
 <h4 id="log-in-using-a-certificate">Log in using a certificate<a class="headerlink" href="#log-in-using-a-certificate" title="Permanent link">&para;</a></h4>
-<p>Another way to log in to Microsoft 365 in the CLI for Microsoft 365 is by using a certificate. To use this authentication method, set the <code>CLIMICROSOFT365_AADAPPID</code> environment variable to the ID of the Azure AD application that you want to use to authenticate the CLI for Microsoft 365 and the <code>CLIMICROSOFT365_TENANT</code> environment variable to the ID of your Azure AD directory. When calling the login command, set the <code>authType</code> option to <code>certificate</code>, specify the path to the certificate private key using the <code>certificateFile</code> option and specify the certificate thumbprint using the <code>thumbprint</code> option.</p>
+<p>Another way to log in to Microsoft 365 in the CLI for Microsoft 365 is by using a certificate. To use this authentication method, set the <code>CLIMICROSOFT365_AADAPPID</code> environment variable to the ID of the Azure AD application that you want to use to authenticate the CLI for Microsoft 365 and the <code>CLIMICROSOFT365_TENANT</code> environment variable to the ID of your Azure AD directory. When calling the login command, set the <code>authType</code> option to <code>certificate</code> and specify the path to the certificate private key using the <code>certificateFile</code> option. Optionally, you can specify the certificate's thumbprint using the <code>thumbprint</code> option. If not specified, CLI will automatically calculate it from the specified certificate.</p>
 <p>To log in to Microsoft 365 using a Personal Information Exchange (.pfx) file, execute:</p>
-<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --thumbprint 47C4885736C624E90491F32B98855AA8A7562AF1 --password <span class="s1">&#39;pass@word1&#39;</span>
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --password <span class="s1">&#39;pass@word1&#39;</span>
 </pre></div>
 <p>To log in to Microsoft 365 using a Privacy Enhanced Mail (PEM) certificate, execute:</p>
-<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pem --thumbprint 47C4885736C624E90491F32B98855AA8A7562AF1
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pem
 </pre></div>
 <p>Logging in to Microsoft 365 using a certificate is convenient for automation scenarios where you cannot authenticate interactively but also don't want to use credentials.</p>
 <p>Because there is no user context when logging in using a certificate, you will typically create a new Azure AD application, specific to your organization and grant it the required permissions.</p>
@@ -8816,7 +8816,7 @@
 <div class="codehilite"><pre><span></span>openssl req -x509 -sha256 -nodes -days <span class="m">365</span> -newkey rsa:2048 -keyout privateKey.key -out certificate.cer
 </pre></div>
 <p>Create a new Personal Information Exchange (.pfx) file</p>
-<div class="codehilite"><pre><span></span>openssl pkcs12 -export -out protected.pfx -inkey privateKey.key -in certificate.cer -password pass:&quot;pass@word1&quot;
+<div class="codehilite"><pre><span></span>openssl pkcs12 -export -out protected.pfx -inkey privateKey.key -in certificate.cer -password pass:<span class="s2">&quot;pass@word1&quot;</span>
 </pre></div>
 <p>At this point the <code>protected.pfx</code> file can be used to log in the CLI for Microsoft 365 following the instructions above for logging in using a .pfx file.</p>
 <p>If login with the .pfx file does not work then extract the private key from a protected .pfx and unprotect it:</p>

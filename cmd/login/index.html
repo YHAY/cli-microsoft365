@@ -8641,9 +8641,11 @@
 <dt><code>-p, --password [password]</code></dt>
 <dd>Password for the user. Required when <code>authType</code> is set to <code>password</code></dd>
 <dt><code>-c, --certificateFile [certificateFile]</code></dt>
-<dd>Path to the file with certificate private key. Required when <code>authType</code> is set to <code>certificate</code></dd>
+<dd>Path to the file with certificate private key. When <code>authType</code> is set to <code>certificate</code>, specify either <code>certificateFile</code> or <code>certificateBase64Encoded</code></dd>
+<dt><code>--certificateBase64Encoded [certificateBase64Encoded]</code></dt>
+<dd>Base64-encoded string with certificate private key. When <code>authType</code> is set to <code>certificate</code>, specify either <code>certificateFile</code> or <code>certificateBase64Encoded</code></dd>
 <dt><code>--thumbprint [thumbprint]</code></dt>
-<dd>Certificate thumbprint. Required when <code>authType</code> is set to <code>certificate</code></dd>
+<dd>Certificate thumbprint. If not specified, and <code>authType</code> is set to <code>certificate</code>, it will be automatically calculated based on the specified certificate</dd>
 <dt><code>-h, --help</code></dt>
 <dd>output usage information</dd>
 <dt><code>--query [query]</code></dt>
@@ -8674,10 +8676,19 @@
 <div class="codehilite"><pre><span></span>m365 login --authType password --userName user@contoso.com --password pass@word1
 </pre></div>
 <p>Log in to Microsoft 365 using a PEM certificate</p>
-<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pem --thumbprint 47C4885736C624E90491F32B98855AA8A7562AF1
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pem
+</pre></div>
+<p>Log in to Microsoft 365 using a PEM certificate. Use the specified thumbprint</p>
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pem  --thumbprint 47C4885736C624E90491F32B98855AA8A7562AF1
 </pre></div>
 <p>Log in to Microsoft 365 using a personal information exchange (.pfx) file</p>
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --password <span class="s1">&#39;pass@word1&#39;</span>
+</pre></div>
+<p>Log in to Microsoft 365 using a personal information exchange (.pfx) file. Use the specified thumbprint</p>
 <div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --thumbprint 47C4885736C624E90491F32B98855AA8A7562AF1 --password <span class="s1">&#39;pass@word1&#39;</span>
+</pre></div>
+<p>Log in to Microsoft 365 using a certificate from a base64-encoded string</p>
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateBase64Encoded MIII2QIBAzCCCJ8GCSqGSIb3DQEHAaCCCJAEg...eX1N5AgIIAA<span class="o">==</span> --thumbprint D0C9B442DE249F55D10CDA1A2418952DC7D407A3
 </pre></div>
 <p>Log in to Microsoft 365 using a system assigned managed identity. Applies to Azure resources with managed identity enabled,
 such as Azure Virtual Machines, Azure App Service or Azure Functions</p>
