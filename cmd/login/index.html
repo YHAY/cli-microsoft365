@@ -8639,13 +8639,17 @@
 <dt><code>-u, --userName [userName]</code></dt>
 <dd>Name of the user to authenticate. Required when <code>authType</code> is set to <code>password</code></dd>
 <dt><code>-p, --password [password]</code></dt>
-<dd>Password for the user. Required when <code>authType</code> is set to <code>password</code></dd>
+<dd>Password for the user or the certificate. Required when <code>authType</code> is set to <code>password</code>, or when <code>authType</code> is set to <code>certificate</code> and the provided certificate requires a password to open</dd>
 <dt><code>-c, --certificateFile [certificateFile]</code></dt>
 <dd>Path to the file with certificate private key. When <code>authType</code> is set to <code>certificate</code>, specify either <code>certificateFile</code> or <code>certificateBase64Encoded</code></dd>
 <dt><code>--certificateBase64Encoded [certificateBase64Encoded]</code></dt>
 <dd>Base64-encoded string with certificate private key. When <code>authType</code> is set to <code>certificate</code>, specify either <code>certificateFile</code> or <code>certificateBase64Encoded</code></dd>
 <dt><code>--thumbprint [thumbprint]</code></dt>
 <dd>Certificate thumbprint. If not specified, and <code>authType</code> is set to <code>certificate</code>, it will be automatically calculated based on the specified certificate</dd>
+<dt><code>--appId [appId]</code></dt>
+<dd>App ID of the Azure AD application to use for authentication. If not specified, use the app specified in the <code>CLIMICROSOFT365_AADAPPID</code> environment variable. If the environment variable is not defined, use the multitenant PnP Management Shell app</dd>
+<dt><code>--tenant [tenant]</code></dt>
+<dd>ID of the tenant from which accounts should be able to authenticate. Use <code>common</code> or <code>organization</code> if the app is multitenant. If not specified, use the tenant specified in the <code>CLIMICROSOFT365_TENANT</code> environment variable. If the environment variable is not defined, use <code>common</code> as the tenant identifier</dd>
 <dt><code>-h, --help</code></dt>
 <dd>output usage information</dd>
 <dt><code>--query [query]</code></dt>
@@ -8684,6 +8688,12 @@
 <p>Log in to Microsoft 365 using a personal information exchange (.pfx) file</p>
 <div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --password <span class="s1">&#39;pass@word1&#39;</span>
 </pre></div>
+<p>Log in to Microsoft 365 using a personal information exchange (.pfx) file protected with an empty password</p>
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --password
+</pre></div>
+<p>Log in to Microsoft 365 using a personal information exchange (.pfx) file not protected with a password</p>
+<div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx
+</pre></div>
 <p>Log in to Microsoft 365 using a personal information exchange (.pfx) file. Use the specified thumbprint</p>
 <div class="codehilite"><pre><span></span>m365 login --authType certificate --certificateFile /Users/user/dev/localhost.pfx --thumbprint 47C4885736C624E90491F32B98855AA8A7562AF1 --password <span class="s1">&#39;pass@word1&#39;</span>
 </pre></div>
@@ -8699,6 +8709,12 @@ such as Azure Virtual Machines, Azure App Service or Azure Functions</p>
 </pre></div>
 <p>Log in to Microsoft 365 using a user-assigned managed identity. Client id or principal id also known as object id value can be specified in the <code>userName</code> option. Applies to Azure resources with managed identity enabled, such as Azure Virtual Machines, Azure App Service or Azure Functions</p>
 <div class="codehilite"><pre><span></span>m365 login --authType identity --userName ac9fbed5-804c-4362-a369-21a4ec51109e
+</pre></div>
+<p>Log in to Microsoft 365 using your own multitenant Azure AD application</p>
+<div class="codehilite"><pre><span></span>m365 login --appId 31359c7f-bd7e-475c-86db-fdb8c937548c
+</pre></div>
+<p>Log in to Microsoft 365 using your own Azure AD application that's restricted only to allow accounts from the specific tenant</p>
+<div class="codehilite"><pre><span></span>m365 login --appId 31359c7f-bd7e-475c-86db-fdb8c937548c --tenant 31359c7f-bd7e-475c-86db-fdb8c937548a
 </pre></div>
                 
                   
