@@ -8652,8 +8652,10 @@
 </pre></div>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <dl>
-<dt><code>-i, --id &lt;id&gt;</code></dt>
-<dd>Site design ID</dd>
+<dt><code>-i, --id [id]</code></dt>
+<dd>Site design ID. Specify either id or title but not both</dd>
+<dt><code>--title [title]</code></dt>
+<dd>Site design title. Specify either id or title but not both</dd>
 <dt><code>-h, --help</code></dt>
 <dd>output usage information</dd>
 <dt><code>--query [query]</code></dt>
@@ -8666,10 +8668,13 @@
 <dd>Runs command with debug logging</dd>
 </dl>
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
-<p>If the specified <code>id</code> doesn't refer to an existing site design, you will get a <code>File not found</code> error.</p>
+<p>If the specified <code>id</code> or <code>title</code> doesn't refer to an existing site design, you will get a <code>File not found</code> error.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Get information about the site design with ID <em>2c1ba4c4-cd9b-4417-832f-92a34bc34b2a</em></p>
 <div class="codehilite"><pre><span></span>m365 spo sitedesign get --id 2c1ba4c4-cd9b-4417-832f-92a34bc34b2a
+</pre></div>
+<p>Get information about the site design with title <em>Contoso Site Design</em></p>
+<div class="codehilite"><pre><span></span>m365 spo sitedesign get --title <span class="s2">&quot;Contoso Site Design&quot;</span>
 </pre></div>
 <h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h2>
 <ul>
