@@ -8857,15 +8857,15 @@
 <dt><code>-y, --translateY [translateY]</code></dt>
 <dd>Y focal point of the header image</dd>
 <dt><code>--layout [layout]</code></dt>
-<dd>Layout to use in the header. Allowed values <code>FullWidthImage,NoImage</code>. Default <code>FullWidthImage</code></dd>
+<dd>Layout to use in the header. Allowed values <code>FullWidthImage,NoImage,ColorBlock,CutInShape</code>. Default <code>FullWidthImage</code></dd>
 <dt><code>--textAlignment [textAlignment]</code></dt>
 <dd>How to align text in the header. Allowed values <code>Center,Left</code>. Default <code>Left</code></dd>
-<dt><code>--showKicker</code></dt>
-<dd>Set, to show the kicker</dd>
+<dt><code>--showTopicHeader</code></dt>
+<dd>Set, to show the topic header</dd>
 <dt><code>--showPublishDate</code></dt>
 <dd>Set, to show the publishing date</dd>
-<dt><code>--kicker [kicker]</code></dt>
-<dd>Text to show in the kicker, when showKicker is set</dd>
+<dt><code>--topicHeader [topicHeader]</code></dt>
+<dd>Text to show in the topic header, when showTopicHeader is set</dd>
 <dt><code>--authors [authors]</code></dt>
 <dd>Comma-separated list of page authors to show in the header</dd>
 <dt><code>-h, --help</code></dt>
@@ -8881,7 +8881,6 @@
 </dl>
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
 <p>If the specified <code>name</code> doesn't refer to an existing modern page, you will get a <code>File doesn't exists</code> error.</p>
-<p>The <code>showKicker</code>, <code>kicker</code> and <code>authors</code> options are based on preview functionality that isn't available on all tenants yet.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Reset the page header to default</p>
 <div class="codehilite"><pre><span></span>m365 spo page header <span class="nb">set</span> --webUrl https://contoso.sharepoint.com/sites/team-a --pageName home.aspx
