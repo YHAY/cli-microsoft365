@@ -8792,7 +8792,7 @@
 <span class="nv">availableTeams</span><span class="o">=</span><span class="sb">`</span>m365 teams team list -o json<span class="sb">`</span>
 <span class="nv">teams</span><span class="o">=()</span>
 
-<span class="k">for</span> team in <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$availableTeams</span> <span class="p">|</span> jq -c <span class="s1">&#39;.[]&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> team <span class="k">in</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$availableTeams</span> <span class="p">|</span> jq -c <span class="s1">&#39;.[]&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
 
     <span class="nv">displayName</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$team</span> <span class="p">|</span> jq <span class="s1">&#39;.displayName&#39;</span><span class="sb">`</span>
     <span class="nb">echo</span> <span class="s2">&quot;Handling team: </span><span class="si">${</span><span class="nv">displayName</span><span class="si">}</span><span class="s2">&quot;</span>

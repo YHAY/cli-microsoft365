@@ -8892,7 +8892,7 @@ m365 flow list --environment <span class="nv">$DEFAULT_ENVIRONMENT</span> --asAd
 <span class="nb">echo</span> <span class="s2">&quot;Building owner information json mapping file...&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;[&quot;</span> &gt; <span class="nv">$TMP_OWNERS</span>  
 <span class="nv">i</span><span class="o">=</span><span class="m">0</span>
-<span class="k">for</span> ownerId in <span class="nv">$uniqueOwners</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> ownerId <span class="k">in</span> <span class="nv">$uniqueOwners</span><span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;Querying graph for userid </span><span class="nv">$ownerId</span><span class="s2">...&quot;</span>
     <span class="nb">echo</span> <span class="k">$(</span>m365 aad user get --id <span class="nv">$ownerId</span> --output json<span class="k">)</span> &gt;&gt; <span class="nv">$TMP_OWNERS</span>
     <span class="k">if</span> <span class="o">[[</span> <span class="nv">$i</span> -lt <span class="nv">$ownerCount</span>-1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>

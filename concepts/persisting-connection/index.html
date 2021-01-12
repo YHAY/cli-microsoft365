@@ -8874,7 +8874,7 @@
 <span class="nv">notDeployedAppsIds</span><span class="o">=(</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$apps</span> <span class="p">|</span> jq -r <span class="s1">&#39;.[] | select(.Deployed == false) | {ID} | .[]&#39;</span><span class="k">)</span><span class="o">)</span>
 
 <span class="c1"># deploy all not deployed apps</span>
-<span class="k">for</span> appId in <span class="nv">$notDeployedAppsIds</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> appId <span class="k">in</span> <span class="nv">$notDeployedAppsIds</span><span class="p">;</span> <span class="k">do</span>
   m365 spo app deploy -i <span class="nv">$appId</span>
 <span class="k">done</span>
 </pre></div>

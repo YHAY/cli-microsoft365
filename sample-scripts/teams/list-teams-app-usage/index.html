@@ -8785,7 +8785,7 @@
   <span class="nb">echo</span> <span class="s2">&quot;There are total of&quot;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$availableTeams</span> <span class="p">|</span> jq length<span class="k">)</span> <span class="s2">&quot;teams available&quot;</span>
 <span class="k">fi</span>
 
-<span class="k">for</span> team in <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$availableTeams</span> <span class="p">|</span> jq -c <span class="s1">&#39;.[]&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> team <span class="k">in</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$availableTeams</span> <span class="p">|</span> jq -c <span class="s1">&#39;.[]&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
     <span class="nv">apps</span><span class="o">=</span><span class="k">$(</span>o365 teams app list -i <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$team</span> <span class="p">|</span> jq <span class="s1">&#39;&#39;</span>.id<span class="k">)</span> -a<span class="k">)</span>
     <span class="nb">echo</span> <span class="s2">&quot;All apps in team are given below: &quot;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$team</span> <span class="p">|</span> jq <span class="s1">&#39;&#39;</span>.displayName<span class="k">)</span> <span class="s2">&quot; &quot;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$team</span> <span class="p">|</span> jq <span class="s1">&#39;&#39;</span>.id<span class="k">)</span>
     <span class="nb">echo</span> <span class="nv">$apps</span>

@@ -8778,7 +8778,7 @@
 <span class="k">while</span> <span class="nb">read</span> sitedesign<span class="p">;</span> <span class="k">do</span>
   <span class="nv">exists</span><span class="o">=</span><span class="nb">false</span>
   <span class="nv">designinfo</span><span class="o">=(</span><span class="si">${</span><span class="nv">sitedesign</span><span class="p">//;/ </span><span class="si">}</span><span class="o">)</span>
-  <span class="k">for</span> keep in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sparksjoy</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+  <span class="k">for</span> keep <span class="k">in</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sparksjoy</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
     <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$keep</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">designinfo</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
       <span class="nv">exists</span><span class="o">=</span><span class="nb">true</span>
       <span class="nb">break</span>
@@ -8797,7 +8797,7 @@
 <span class="nb">echo</span> <span class="s2">&quot;Press Enter to start deleting (CTRL + C to exit)&quot;</span>
 <span class="nb">read</span> foo
 
-<span class="k">for</span> sitedesign in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sitedesignstoremove</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> sitedesign <span class="k">in</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sitedesignstoremove</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
   <span class="nv">designinfo</span><span class="o">=(</span><span class="si">${</span><span class="nv">sitedesign</span><span class="p">//;/ </span><span class="si">}</span><span class="o">)</span>
   <span class="nb">echo</span> <span class="s2">&quot;Deleting </span><span class="si">${</span><span class="nv">designinfo</span><span class="p">[0]</span><span class="si">}</span><span class="s2">...&quot;</span>
   m365 spo sitedesign remove --id <span class="s2">&quot;</span><span class="si">${</span><span class="nv">designinfo</span><span class="p">[1]</span><span class="si">}</span><span class="s2">&quot;</span> --confirm

@@ -8815,7 +8815,7 @@ clear
 <span class="nb">echo</span> <span class="s2">&quot;Press Enter to start deleting (CTRL + C to exit)&quot;</span>
 <span class="nb">read</span> foo
 
-<span class="k">for</span> site in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sitestoremove</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> site <span class="k">in</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sitestoremove</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
    <span class="nv">siteUrl</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="si">${</span><span class="nv">site</span><span class="si">}</span> <span class="p">|</span> jq -r <span class="s1">&#39;.Url&#39;</span><span class="k">)</span>
   <span class="nb">echo</span> <span class="s2">&quot;Deleting site...&quot;</span>
   <span class="nb">echo</span> <span class="nv">$siteUrl</span>

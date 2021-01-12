@@ -8858,6 +8858,8 @@
 <dd>Set to publish the page</dd>
 <dt><code>--publishMessage [publishMessage]</code></dt>
 <dd>Message to set when publishing the page</dd>
+<dt><code>--description [description]</code></dt>
+<dd>The description to set for the page</dd>
 <dt><code>-h, --help</code></dt>
 <dd>output usage information</dd>
 <dt><code>--query [query]</code></dt>
@@ -8896,6 +8898,9 @@
 </pre></div>
 <p>Create new article page and publish it</p>
 <div class="codehilite"><pre><span></span>m365 spo page add --name new-page.aspx --webUrl https://contoso.sharepoint.com/sites/a-team --publish
+</pre></div>
+<p>Create new article page with description</p>
+<div class="codehilite"><pre><span></span>m365 spo page add --name page.aspx --webUrl https://contoso.sharepoint.com/sites/a-team --description <span class="s2">&quot;Description to add for the page&quot;</span>
 </pre></div>
                 
                   

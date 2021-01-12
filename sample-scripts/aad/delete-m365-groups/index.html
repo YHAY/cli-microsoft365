@@ -8779,7 +8779,7 @@
 <span class="k">while</span> <span class="nb">read</span> o365group<span class="p">;</span> <span class="k">do</span>
   <span class="nv">exists</span><span class="o">=</span><span class="nb">false</span>
   <span class="nv">displayName</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$o365group</span> <span class="p">|</span> cut -d<span class="s1">&#39;;&#39;</span> -f <span class="m">1</span><span class="k">)</span>
-  <span class="k">for</span> keep in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sparksjoy</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+  <span class="k">for</span> keep <span class="k">in</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sparksjoy</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
     <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$keep</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="nv">$displayName</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
       <span class="nv">exists</span><span class="o">=</span><span class="nb">true</span>
       <span class="nb">break</span>
@@ -8798,7 +8798,7 @@
 <span class="nb">echo</span> <span class="s2">&quot;Press Enter to start deleting (CTRL + C to exit)&quot;</span>
 <span class="nb">read</span> foo
 
-<span class="k">for</span> o365group in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">groupstoremove</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> o365group <span class="k">in</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">groupstoremove</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
   <span class="nv">displayName</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$o365group</span> <span class="p">|</span> cut -d<span class="s1">&#39;;&#39;</span> -f <span class="m">1</span><span class="k">)</span>
   <span class="nv">id</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$o365group</span> <span class="p">|</span> cut -d<span class="s1">&#39;;&#39;</span> -f <span class="m">2</span><span class="k">)</span>
   <span class="nb">echo</span> <span class="s2">&quot;Deleting </span><span class="nv">$displayName</span><span class="s2">...&quot;</span>
