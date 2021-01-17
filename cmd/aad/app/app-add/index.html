@@ -8584,6 +8584,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../../sample-scripts/spo/list-all-application-customizers/" title="Lists all application customizers in the tenant" class="md-nav__link">
+      Lists all application customizers in the tenant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../../sample-scripts/spo/list-tenant-wide-extensions/" title="Lists all tenant-wide extensions" class="md-nav__link">
       Lists all tenant-wide extensions
     </a>
@@ -8905,7 +8917,7 @@
 </dl>
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
 <p>When specifying the value for the <code>uri</code>, you can use the <code>_appId_</code> token, to include the ID of the newly generated Azure AD app registration in the Application ID URI, eg. URI <code>api://caf406b91cd4.ngrok.io/_appId_</code> will become <code>api://caf406b91cd4.ngrok.io/ab3bd119-faf7-4db5-ba99-eb7e748f778a</code> where the last portion is the app ID of the created Azure AD app registration.</p>
-<p>When using the <code>withSecret</code> option, this command will automatically generate a secret and set it to expire in 100 years in the future.</p>
+<p>When using the <code>withSecret</code> option, this command will automatically generate a secret and set it to expire in 1 year in the future.</p>
 <p>After creating the Azure AD app registration, this command returns the app ID and object ID of the created app registration. If you used the <code>withSecret</code> option, it will also return the generated secret.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Create new Azure AD app registration with the specified name</p>
