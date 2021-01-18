@@ -4914,6 +4914,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../cmd/spo/page/page-template-list/" title="page template list" class="md-nav__link">
+      page template list
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../cmd/spo/page/page-text-add/" title="page text add" class="md-nav__link">
       page text add
     </a>
@@ -11449,6 +11461,10 @@
 <ul>
 <li><a href="../../cmd/flow/run/run-resubmit/">flow run resubmit</a> - resubmits a specific flow run for the specified Microsoft Flow <a href="https://github.com/pnp/cli-microsoft365/issues/1871">#1871</a></li>
 </ul>
+<p><strong>SharePoint:</strong></p>
+<ul>
+<li><a href="../../cmd/spo/page/page-template-list/">spo page template list</a> - lists all page templates in the given site <a href="https://github.com/pnp/cli-microsoft365/issues/2065">#2065</a></li>
+</ul>
 <h3 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>updated 'teams team add' to use Microsoft Graph v1.0 API <a href="https://github.com/pnp/cli-microsoft365/issues/2020">#2020</a></li>
@@ -11462,6 +11478,9 @@
 <li>added new sample script 'Export all Flows in environment' <a href="https://github.com/pnp/cli-microsoft365/pull/2082">#2082</a></li>
 <li>added new sample script 'List all application customizers' <a href="https://github.com/pnp/cli-microsoft365/issues/2074">#2074</a></li>
 <li>changed secret expiration to 1 year in <code>aad app add</code> <a href="https://github.com/pnp/cli-microsoft365/issues/2064">#2064</a></li>
+<li>added support for setting authors and checks in page in 'spo page header set' <a href="https://github.com/pnp/cli-microsoft365/issues/2069">#2069</a>, <a href="https://github.com/pnp/cli-microsoft365/issues/2070">#2070</a></li>
+<li>fixed removing previous values and checks in page in 'spo page clientsidewebpart add' <a href="https://github.com/pnp/cli-microsoft365/issues/2068">#2068</a>, <a href="https://github.com/pnp/cli-microsoft365/issues/2069">#2069</a></li>
+<li>checking in page if not published in 'spo page add' and 'spo page set' <a href="https://github.com/pnp/cli-microsoft365/issues/2069">#2069</a></li>
 </ul>
 <h2 id="v340"><a href="https://github.com/pnp/cli-microsoft365/releases/tag/v3.4.0">v3.4.0</a><a class="headerlink" href="#v340" title="Permanent link">&para;</a></h2>
 <h3 id="new-commands_1">New commands<a class="headerlink" href="#new-commands_1" title="Permanent link">&para;</a></h3>
