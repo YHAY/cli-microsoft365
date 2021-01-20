@@ -7263,10 +7263,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-1" type="checkbox" id="nav-4-20-1">
     
     <label class="md-nav__link" for="nav-4-20-1">
-      id
+      auditlog
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
       <label class="md-nav__title" for="nav-4-20-1">
+        auditlog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cmd/tenant/auditlog/auditlog-report/" title="auditlog report" class="md-nav__link">
+      auditlog report
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-2" type="checkbox" id="nav-4-20-2">
+    
+    <label class="md-nav__link" for="nav-4-20-2">
+      id
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-20-2">
         id
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -7296,13 +7332,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-2" type="checkbox" id="nav-4-20-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-3" type="checkbox" id="nav-4-20-3">
     
-    <label class="md-nav__link" for="nav-4-20-2">
+    <label class="md-nav__link" for="nav-4-20-3">
       report
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-20-2">
+      <label class="md-nav__title" for="nav-4-20-3">
         report
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -7356,13 +7392,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-3" type="checkbox" id="nav-4-20-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-4" type="checkbox" id="nav-4-20-4">
     
-    <label class="md-nav__link" for="nav-4-20-3">
+    <label class="md-nav__link" for="nav-4-20-4">
       service
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-20-3">
+      <label class="md-nav__title" for="nav-4-20-4">
         service
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -7416,13 +7452,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-4" type="checkbox" id="nav-4-20-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-5" type="checkbox" id="nav-4-20-5">
     
-    <label class="md-nav__link" for="nav-4-20-4">
+    <label class="md-nav__link" for="nav-4-20-5">
       status
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-20-4">
+      <label class="md-nav__title" for="nav-4-20-5">
         status
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -11453,6 +11489,10 @@
 <li><a href="../../cmd/aad/app/app-add/">aad app add</a> - creates new Azure AD app registration <a href="https://github.com/pnp/cli-microsoft365/issues/1962">#1962</a></li>
 <li><a href="../../cmd/aad/o365group/o365group-recyclebinitem-list/">aad o365group recyclebinitem list</a> - lists Groups from the recycle bin in the current tenant <a href="https://github.com/pnp/cli-microsoft365/issues/2032">#2032</a></li>
 </ul>
+<p><strong>Microsoft 365:</strong></p>
+<ul>
+<li><a href="../../cmd/tenant/auditlog/auditlog-report/">tenant auditlog report</a> - gets audit logs from the Office 365 Management API <a href="https://github.com/pnp/cli-microsoft365/issues/1739">#1739</a></li>
+</ul>
 <p><strong>File:</strong></p>
 <ul>
 <li><a href="../../cmd/file/convert/convert-pdf/">file convert pdf</a> - converts the specified file to PDF using Microsoft Graph <a href="https://github.com/pnp/cli-microsoft365/issues/2010">#2010</a></li>
@@ -11481,6 +11521,7 @@
 <li>added support for setting authors and checks in page in 'spo page header set' <a href="https://github.com/pnp/cli-microsoft365/issues/2069">#2069</a>, <a href="https://github.com/pnp/cli-microsoft365/issues/2070">#2070</a></li>
 <li>fixed removing previous values and checks in page in 'spo page clientsidewebpart add' <a href="https://github.com/pnp/cli-microsoft365/issues/2068">#2068</a>, <a href="https://github.com/pnp/cli-microsoft365/issues/2069">#2069</a></li>
 <li>checking in page if not published in 'spo page add' and 'spo page set' <a href="https://github.com/pnp/cli-microsoft365/issues/2069">#2069</a></li>
+<li>fixed bug in 'spo app add' returning an object instead of just the app ID <a href="https://github.com/pnp/cli-microsoft365/issues/2080">#2080</a></li>
 </ul>
 <h2 id="v340"><a href="https://github.com/pnp/cli-microsoft365/releases/tag/v3.4.0">v3.4.0</a><a class="headerlink" href="#v340" title="Permanent link">&para;</a></h2>
 <h3 id="new-commands_1">New commands<a class="headerlink" href="#new-commands_1" title="Permanent link">&para;</a></h3>
