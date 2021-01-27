@@ -9028,9 +9028,6 @@
 <p>When the value, that you want to provide contains quotes, it needs to be wrapped in quotes as well, for example to pass a JSON value in the CLI prompt, you would execute:</p>
 <div class="codehilite"><pre><span></span>m365 spo sitescript add --title <span class="s2">&quot;Contoso&quot;</span> --description <span class="s2">&quot;Contoso theme script&quot;</span> --content <span class="s1">&#39;{&quot;abc&quot;: &quot;def&quot;}&#39;</span>
 </pre></div>
-<p>If you use the CLI for Microsoft 365 in Bash, the outer pair of quotes will be processed by Bash so the value needs to be wrapped in an additional pair of quotes, for example:</p>
-<div class="codehilite"><pre><span></span>m365 spo sitescript add --title <span class="s2">&quot;Contoso&quot;</span> --description <span class="s2">&quot;Contoso theme script&quot;</span> --content <span class="s1">&#39;`{&quot;abc&quot;: &quot;def&quot;}`&#39;</span>
-</pre></div>
 <h2 id="passing-complex-content-into-cli-options">Passing complex content into CLI options<a class="headerlink" href="#passing-complex-content-into-cli-options" title="Permanent link">&para;</a></h2>
 <p>When passing complex content into CLI options, such as JSON strings, you will need to properly escape nested quotes. The exact way to do it, depends on the shell that you're using. Alternatively, you can choose to pass complex content by storing the complex content in a file and passing the path to the file prefixed with an <code>@</code>, for example:</p>
 <div class="codehilite"><pre><span></span>m365 spo sitescript add --title <span class="s2">&quot;Contoso&quot;</span> --description <span class="s2">&quot;Contoso theme script&quot;</span> --content @themeScript.json
