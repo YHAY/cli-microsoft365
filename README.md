@@ -90,7 +90,7 @@
   - Device Code
   - Username and Password
 - Manage your SharePoint Framework projects
-  - Uprade your projects
+  - Upgrade your projects
   - Check your environment compatibility
 
 > Follow our [Twitter](https://twitter.com/climicrosoft365) account to keep yourself updated about new features, improvements, and bug fixes.
